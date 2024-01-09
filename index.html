@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .wrap{
+            width: 500px;
+            height: 500px;
+            overflow: none;
+            position: relative;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .img-color{
+            inset: 0;      
+            object-fit: cover;
+            position: absolute;
+            background:url("./yoroiichi.png");
+            background-size: cover;
+            -webkit-mask-image: url("./mask1.png");
+            -webkit-mask-size: cover;
+            -webkit-mask-position: 0% 0%;
+            mask-image: url("mask1.png");
+            mask-size: cover;
+            mask-position: 0% 0%;
+            transition: -webkit-mask-position 1000ms steps(39);
+        }
+        .img-color:hover {
+            -webkit-mask-position: 100% 0% ;
+            mask-position: 100% 0%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="img-color"></div>
+        <img src="./yoroiichibw.png" alt="" class="img-bw">
+    </div>
+</body>
+</html>
